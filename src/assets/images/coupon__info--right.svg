@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="24px" viewBox="0 0 12 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>PC/Card/middle/Right</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="12" height="24"></rect>
+    </defs>
+    <g id="PC/Card/middle/Right" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Mask"></g>
+        <g id="card-middle" mask="url(#mask-2)">
+            <g transform="translate(9.500000, 12.000000) scale(-1, 1) translate(-9.500000, -12.000000) translate(-1.000000, -1.000000)">
+                <circle id="Oval-Copy" stroke="none" fill="#FFFFFF" fill-rule="evenodd" cx="7.99965319" cy="13" r="8"></circle>
+                <path d="M20.4996532,0.5 L8.49965319,0.5 L8.49965319,4.51446179 C10.6477773,4.63906786 12.5818588,5.56139036 14.0100608,6.98959236 C15.5482583,8.52778981 16.4996532,10.6527898 16.4996532,13 C16.4996532,15.3472102 15.5482583,17.4722102 14.0100608,19.0104076 C12.5818588,20.4386096 10.6477773,21.3609321 8.49965319,21.4855382 L8.49965319,25.5 L20.4996532,25.5 L20.4996532,0.5 Z" id="Combined-Shape" stroke="#D9DBE1" stroke-width="1" fill="none"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="38" viewBox="0 0 48 38">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="20" height="16" x="13" y="1" stroke="#008484" stroke-width="2" rx="6"/>
+        <rect width="48" height="33" y="5" fill="#008484" rx="6"/>
+        <text fill="#FFF" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-size="12" font-weight="bold">
+            <tspan x="9" y="25">23Kg</tspan>
+        </text>
+    </g>
+</svg>

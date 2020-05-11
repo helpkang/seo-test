@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <g fill="none" fill-rule="evenodd">
+        <circle cx="10" cy="10" r="9.5" stroke="#767676"/>
+        <text fill="#767676" font-family="Noto Sans KR, Malgun Gothic, sans-serif" font-size="10">
+            <tspan x="7.125" y="15">E</tspan>
+        </text>
+    </g>
+</svg>

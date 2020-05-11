@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1001" height="400" viewBox="0 0 1001 400">
+    <defs>
+        <rect id="prefix__a" width="1000" height="400" x="0" y="0" rx="2"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(1)">
+        <mask id="prefix__b" fill="#fff">
+            <use xlink:href="#prefix__a"/>
+        </mask>
+        <use fill="#F3F4F8" xlink:href="#prefix__a"/>
+        <text fill="#555" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="16" mask="url(#prefix__b)">
+            <tspan x="438.036" y="207">이미지 추후 업로드</tspan>
+        </text>
+    </g>
+</svg>

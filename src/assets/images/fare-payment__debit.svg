@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M0 0h24v24H0z"/>
+        <g transform="translate(1 5)">
+            <rect width="22" height="14" fill="#7EBAE6" rx="2"/>
+            <path fill="#FAAA4F" d="M2 3h4v3H2z"/>
+            <path fill="#000" d="M0 8h22v3H0z"/>
+        </g>
+        <g transform="translate(12 10)">
+            <circle cx="6" cy="6" r="6" fill="#FFF8F8"/>
+            <path fill="#1C5580" fill-rule="nonzero" stroke="#1C5580" stroke-width=".5" d="M6 1a5 5 0 1 0 0 10A5 5 0 0 0 6 1zm4.5 4.75H9c-.047-1.657-.555-3.08-1.322-3.925A4.5 4.5 0 0 1 10.5 5.75zM5.75 1.522V5.75H3.5c.075-2.215 1.035-4 2.25-4.228zm0 4.728v4.227c-1.215-.217-2.175-2-2.25-4.227h2.25zm.5 4.227V6.25H8.5c-.075 2.215-1.035 4-2.25 4.227zm0-4.727V1.522C7.465 1.75 8.425 3.535 8.5 5.75H6.25zM4.33 1.825C3.56 2.67 3.055 4.093 3 5.75H1.5a4.5 4.5 0 0 1 2.83-3.925zM1.513 6.25h1.5c.047 1.657.552 3.08 1.322 3.925A4.5 4.5 0 0 1 1.513 6.25zm6.157 3.925c.768-.845 1.275-2.268 1.322-3.925h1.5a4.5 4.5 0 0 1-2.822 3.925z"/>
+        </g>
+    </g>
+</svg>

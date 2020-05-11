@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="40" viewBox="0 0 16 40">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#DE001B" d="M0 0h16v40H0z"/>
+        <text fill="#FFF" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-size="10" font-weight="bold" letter-spacing=".5" transform="rotate(90 8 20.5)">
+            <tspan x="-4" y="25">EXIT</tspan>
+        </text>
+    </g>
+</svg>

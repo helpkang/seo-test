@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <path fill="#FFF" d="M0 0H360V1624H0z" transform="translate(-344 -685)"/>
+            <g transform="translate(-344 -685) translate(344 657)">
+                <circle cx="6" cy="34" r="6" fill="#8BE0F8"/>
+                <text fill="#00256C" font-family="Noto Sans KR, Malgun Gothic, sans-serif" font-size="8">
+                    <tspan x="3.5" y="37">F</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

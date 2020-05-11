@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <g fill="none" fill-rule="evenodd">
+        <circle cx="8" cy="8" r="8" fill="#0A76D7"/>
+        <text fill="#FFF" font-family="Noto Sans KR, Malgun Gothic, sans-serif" font-size="10">
+            <tspan x="5" y="12">P</tspan>
+        </text>
+    </g>
+</svg>

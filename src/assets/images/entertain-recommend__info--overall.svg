@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33" height="24" viewBox="0 0 33 24">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="33" height="24" fill="#007B25" rx="2"/>
+        <text fill="#FFF" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="12">
+            <tspan x="6.354" y="17">ALL</tspan>
+        </text>
+    </g>
+</svg>

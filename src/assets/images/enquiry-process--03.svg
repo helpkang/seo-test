@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49" height="49" viewBox="0 0 49 49">
+    <defs>
+        <path id="prefix__a" d="M0 0.022L14.445 0.022 14.445 27.333 0 27.333z"/>
+        <path id="prefix__c" d="M0 0.609L13.2 0.609 13.2 25.809 0 25.809z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(0 1)">
+        <rect width="48" height="48" fill="#F8F9FC" rx="24"/>
+        <g>
+            <g>
+                <path fill="#64E1FE" d="M24.24 16.561L17.877 23.5c-.592.646-1.562.646-2.154 0L9.36 16.561c-.718-.783-.21-2.122.806-2.122h13.268c1.015 0 1.523 1.34.806 2.122" transform="translate(9 8) translate(4 2)"/>
+                <path fill="#66E2FF" d="M19.067 19.435h-4.534c-.736 0-1.333-.597-1.333-1.333V9.968c0-.736.597-1.333 1.333-1.333h4.534c.736 0 1.333.597 1.333 1.333v8.134c0 .736-.597 1.333-1.333 1.333" transform="translate(9 8) translate(4 2)"/>
+                <g transform="translate(9 8) translate(4 2) translate(0 .645)">
+                    <mask id="prefix__b" fill="#fff">
+                        <use xlink:href="#prefix__a"/>
+                    </mask>
+                    <path fill="#FFF" d="M11.928.022h-9.41C1.127.022 0 1.148 0 2.538v22.278c0 1.39 1.127 2.518 2.518 2.518h9.41c1.39 0 2.517-1.128 2.517-2.518V2.538c0-1.39-1.127-2.516-2.517-2.516" mask="url(#prefix__b)"/>
+                </g>
+                <g transform="translate(9 8) translate(4 2) translate(0 .645)">
+                    <mask id="prefix__d" fill="#fff">
+                        <use xlink:href="#prefix__c"/>
+                    </mask>
+                    <path fill="#00256C" d="M12 .609H9c0 1.325-1.074 2.4-2.4 2.4-1.325 0-2.4-1.075-2.4-2.4h-3c-.663 0-1.2.538-1.2 1.2v22.8c0 .662.537 1.2 1.2 1.2h3c0-1.325 1.075-2.4 2.4-2.4 1.326 0 2.4 1.075 2.4 2.4h3c.663 0 1.2-.538 1.2-1.2v-22.8c0-.662-.537-1.2-1.2-1.2" mask="url(#prefix__d)"/>
+                </g>
+                <path stroke="#FFF" stroke-width="1.4" d="M5.819 12.101c0 .537-.435.972-.972.972-.537 0-.972-.435-.972-.972 0-.537.435-.972.972-.972.537 0 .972.435.972.972zM9.325 15.608c0 .537-.435.972-.972.972-.537 0-.972-.435-.972-.972 0-.538.435-.972.972-.972.537 0 .972.434.972.972zM4.183 16.237L8.983 11.438" transform="translate(9 8) translate(4 2)"/>
+            </g>
+            <path d="M0 0H32V32H0z" opacity=".278" transform="translate(9 8)"/>
+        </g>
+    </g>
+</svg>

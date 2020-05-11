@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <path fill="#FFF" d="M0 0H1440V1579H0z" transform="translate(-313 -278)"/>
+            <path fill="#000" fill-opacity=".5" d="M0 0H1440V3488H0z" transform="translate(-313 -278)"/>
+            <path fill="#FFF" d="M273 109H1153V1351H273z" transform="translate(-313 -278)"/>
+            <path fill="#F8F9FC" d="M352 346H354V596H352z" transform="translate(-313 -278)"/>
+            <g transform="translate(-313 -278) translate(313 278)">
+                <rect width="80" height="80" fill="#F8F9FC" rx="40"/>
+                <g>
+                    <g>
+                        <path fill="#66E2FF" d="M9.6 0h20.8c2.21 0 4 1.79 4 4v30.4c0 2.21-1.79 4-4 4H9.6c-2.21 0-4-1.79-4-4V4c0-2.21 1.79-4 4-4z" transform="translate(15 16) translate(7 5)"/>
+                        <path fill="#FFF" d="M10.8 3.2h18.4c1.105 0 2 .895 2 2V40H8.8V5.2c0-1.105.895-2 2-2z" transform="translate(15 16) translate(7 5)"/>
+                        <path fill="#00256C" d="M2 18.4h26.8v20H2c-1.105 0-2-.895-2-2v-16c0-1.105.895-2 2-2z" transform="translate(15 16) translate(7 5)"/>
+                        <path stroke="#00256C" stroke-width="2" d="M12 18.91v-2.973c0-.849.478-1.537 1.067-1.537h7.466c.59 0 1.067.688 1.067 1.537V19.2" transform="translate(15 16) translate(7 5)"/>
+                    </g>
+                    <path d="M0 0H48V48H0z" opacity=".278" transform="translate(15 16)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

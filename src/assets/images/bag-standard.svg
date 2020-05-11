@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180" height="180" viewBox="0 0 180 180">
+    <defs>
+        <path id="prefix__a" d="M0.066 0L55.973 0 55.973 72.876 0.066 72.876z"/>
+        <path id="prefix__c" d="M0 106.429L55.973 106.429 55.973 0 0 0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <path fill="#FFF" d="M0 0H360V3828H0z" transform="translate(-90 -2104)"/>
+            <g>
+                <path fill="#F8F9FC" d="M0 0H320V180H0z" transform="translate(-90 -2104) translate(20 2104)"/>
+                <g transform="translate(-90 -2104) translate(20 2104) translate(148 28.678)">
+                    <path fill="#333" d="M13.09 106.429c-2.314 0-4.19-1.856-4.19-4.144V97.41h8.38v4.876c0 2.288-1.876 4.144-4.19 4.144M42.95 106.429c-2.315 0-4.191-1.856-4.191-4.144V97.41h8.38v4.876c0 2.288-1.876 4.144-4.19 4.144"/>
+                    <path stroke="#8BE0F8" stroke-linejoin="round" stroke-width="2.541" d="M18.177 28.35V4.319c0-.821.679-1.492 1.509-1.492h16.667c.83 0 1.509.67 1.509 1.492V28.35"/>
+                    <path stroke="#00256C" stroke-linejoin="round" stroke-width="4.447" d="M18.177 7.618V3.455c0-.692.572-1.256 1.27-1.256h17.144c.699 0 1.27.564 1.27 1.256v4.163"/>
+                    <g transform="translate(0 27.898)">
+                        <mask id="prefix__b" fill="#fff">
+                            <use xlink:href="#prefix__a"/>
+                        </mask>
+                        <path fill="#00256C" d="M52.797 72.876H3.243c-1.755 0-3.177-1.406-3.177-3.14V3.14C.066 1.406 1.488 0 3.243 0h49.554c1.754 0 3.176 1.406 3.176 3.141v66.594c0 1.735-1.422 3.141-3.176 3.141" mask="url(#prefix__b)"/>
+                    </g>
+                    <mask id="prefix__d" fill="#fff">
+                        <use xlink:href="#prefix__c"/>
+                    </mask>
+                    <path fill="#FFF" d="M12.455 100.715L14.36 100.715 14.36 27.839 12.455 27.839zM41.679 100.715L43.585 100.715 43.585 27.839 41.679 27.839z" mask="url(#prefix__d)"/>
+                    <path fill="#8BE0F8" d="M0 32.924v-1.885c0-1.735 1.422-3.141 3.177-3.141h1.905M55.973 32.924v-1.885c0-1.735-1.422-3.141-3.176-3.141H50.89M52.818 100.774H3.182c-1.757 0-3.182-1.406-3.182-3.14h56c0 1.734-1.424 3.14-3.182 3.14" mask="url(#prefix__d)"/>
+                </g>
+                <path fill="#D8D8D8" d="M135 57.356H136V129.545H135z" transform="translate(-90 -2104) translate(20 2104)"/>
+                <path fill="#D8D8D8" d="M144.085 23.661L145.08 23.656 144.915 53.472 143.92 53.477z" transform="translate(-90 -2104) translate(20 2104) rotate(42 144.5 38.567)"/>
+                <path fill="#D8D8D8" d="M147 142.4H205V143.4H147z" transform="translate(-90 -2104) translate(20 2104)"/>
+                <text fill="#555" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="12" transform="translate(-90 -2104) translate(20 2104)">
+                    <tspan x="81" y="95.956">B : 55cm</tspan>
+                </text>
+                <text fill="#555" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="12" transform="translate(-90 -2104) translate(20 2104)">
+                    <tspan x="151" y="158.256">C : 40cm</tspan>
+                </text>
+                <text fill="#555" font-family="NotoSansCJKkr-Regular, Noto Sans CJK KR" font-size="12" transform="translate(-90 -2104) translate(20 2104)">
+                    <tspan x="94" y="31.678">A : 20cm</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="36" viewBox="0 0 80 36">
+    <defs>
+        <rect id="b" width="320" height="236" rx="1"/>
+        <filter id="a" width="121.9%" height="129.7%" x="-10.9%" y="-10.6%" filterUnits="objectBoundingBox">
+            <feOffset dy="10" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0.0961117297 0 0 0 0 0.280542346 0 0 0 0.1 0"/>
+        </filter>
+        <path id="d" d="M18 0h62v18c0 9.941-8.059 18-18 18H0V18C0 8.059 8.059 0 18 0z"/>
+        <filter id="c" width="168.8%" height="252.8%" x="-34.4%" y="-56.9%" filterUnits="objectBoundingBox">
+            <feOffset dy="7" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="8"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.0303358189 0 0 0 0 0.45729886 0 0 0 0 0.745329484 0 0 0 0.2 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#FFF" d="M-140-262h360v1468h-360z"/>
+        <path d="M-5-1h90v60H-5z"/>
+        <text fill="#00256C" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-size="14" font-weight="bold" transform="translate(-5 -1)">
+            <tspan x="23.433" y="24">10 (월)</tspan>
+        </text>
+        <text fill="#DE001B" font-family="NotoSansCJKkr-Bold, Noto Sans CJK KR" font-size="14" font-weight="bold" transform="translate(-5 -1)">
+            <tspan x="18.487" y="46">588,900</tspan>
+        </text>
+        <g>
+            <g transform="translate(-120 -180)">
+                <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+                <use fill="#FFF" xlink:href="#b"/>
+            </g>
+            <g>
+                <use fill="#000" filter="url(#c)" xlink:href="#d"/>
+                <use fill="#118FE4" xlink:href="#d"/>
+            </g>
+            <path fill="#FFF" fill-rule="nonzero" d="M30.23 19.355c.262-.202.528-.422 1.781-.484a.813.813 0 0 1 .384.062l2.254.725c.44-.205 2.107-.983 4.07-1.892l-4.642-2.221c-.136-.065-.216-.177-.212-.3.003-.122.089-.23.23-.288l1.564-.655c.15-.063.389-.088.554-.056l7.132 1.391c1.467-.668 2.678-1.21 3.183-1.413.371-.149.822-.224 1.34-.224 1.323 0 1.9.223 2.094.552.007.013.518 1.387-2.43 2.925l-10.561 4.89c-.011.004-.06.012-.957.36-.896.346-1.144.265-1.455.265-.311 0-.843-.313-.88-.336l-3.594-2.488-.009-.009c-.127-.1-.107-.601.155-.804z"/>
+        </g>
+    </g>
+</svg>

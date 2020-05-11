@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="74" viewBox="0 0 44 74">
+    <g fill="none" fill-rule="evenodd">
+        <g transform="matrix(-1 0 0 1 44 0)">
+            <path d="M0 0H44V74H0z"/>
+            <rect width="30" height="44" x="7" y="23" fill="#8E8E8E" rx="8"/>
+            <rect width="24" height="8" x="10" y="9" fill="#8E8E8E" rx="4"/>
+            <rect width="9" height="22" x="4" y="48" fill="#8E8E8E" rx="4"/>
+            <rect width="9" height="22" x="31" y="48" fill="#8E8E8E" rx="4"/>
+            <rect width="24" height="10" x="10" y="64" fill="#8E8E8E" rx="4"/>
+            <path stroke="#8E8E8E" stroke-linecap="round" stroke-width="2" d="M1 9c0-4.418 3.419-8 7.636-8h26.728C39.58 1 43 4.582 43 9"/>
+        </g>
+        <path fill="#FFF" stroke="#FFF" stroke-width=".5" d="M31.574 38l.426.426L22.425 48 32 57.574l-.426.426L22 48.425 12.426 58 12 57.574 21.574 48 12 38.426l.426-.426L22 47.575 31.574 38z"/>
+    </g>
+</svg>
