@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { filter, map, mergeMap } from 'rxjs/operators';
+import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
+import { filter, map, mergeMap, takeWhile, delay } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
@@ -13,7 +13,8 @@ function sleep(ms) {
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
+  alive = true;
 
   constructor(
     private http: HttpClient,
@@ -34,8 +35,12 @@ export class HomeComponent implements OnInit {
     });
     this.setupSEO();
   }
-  
+
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    this.alive = false;
   }
 
   changeCanonical({ url }) {
@@ -49,14 +54,13 @@ export class HomeComponent implements OnInit {
     link.setAttribute('href', 'http://www.ibiz.name' + url);
   }
 
-  async changeMeta ({ metaData }) {
+  async changeMeta({ metaData }) {
 
-    await sleep(500);
 
     const cloneData = {
       title: '111',
       keywords: '',
-      description: '', 
+      description: '',
       ...metaData,
     }
     const { title, keywords, description } = cloneData;
@@ -75,19 +79,26 @@ export class HomeComponent implements OnInit {
     const routerAjaxSrc = this.activeRoute.url
 
     routerAjaxSrc.pipe(
-      map(( url ) => ({
+      map(url=>{
+        this.changeCanonical({url});
+        return url;
+      }),
+      delay(500),
+      takeWhile(() => this.alive),
+      map((url) => ({
         url,
         metaData: {
           title: url,
         }
       }))
     ).subscribe((data) => {
-      this.changeCanonical(data);
-      this.changeMeta({metaData:{
-        title: '추천 테마 여행지',
-        keywords: '추천, 테마 여행지, 인천, 로마, 세부, 부다페스트, 시드니',
-        description: '즐거운 추천 테마 여행지',
-      }});
+      this.changeMeta({
+        metaData: {
+          title: '추천 테마 여행지',
+          keywords: '추천, 테마 여행지, 인천, 로마, 세부, 부다페스트, 시드니',
+          description: '즐거운 추천 테마 여행지',
+        }
+      });
     });
   }
 }

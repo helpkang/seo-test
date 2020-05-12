@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { filter, map, mergeMap } from 'rxjs/operators';
+import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
+import { filter, map, mergeMap, takeWhile, delay } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
@@ -14,7 +14,8 @@ function sleep(ms) {
   selector: 'app-home',
   templateUrl: './data.component.html',
 })
-export class DataComponent implements OnInit {
+export class DataComponent implements OnInit, OnDestroy {
+  alive = true;
   reset() {
     this.title.setTitle('');
     this.meta.updateTag({
@@ -43,12 +44,32 @@ export class DataComponent implements OnInit {
   ) { 
 
 
-    this.activeRoute.url.subscribe(async (url) => {
+    this.activeRoute.url.pipe(
+      map(v=>{
+        this.reset();
+        return v;
+      }),
+      delay(500),
+      takeWhile(() => this.alive)
+    )
+    .subscribe(async (url) => {
       await this.metasubscribe(url);
     });
-    this.router.events.subscribe(async (url)=>{
+
+
+    this.router.events.pipe(
+      map(v=>{
+        this.reset();
+        return v;
+      }),
+      delay(500),
+      takeWhile(() => this.alive)
+    ).subscribe(async (url)=>{
       await this.metasubscribe(url);
     })
+  }
+  ngOnDestroy(): void {
+    this.alive = false;
   }
 
   private async metasubscribe(url) {
@@ -59,7 +80,7 @@ export class DataComponent implements OnInit {
     this.to = value[2];
     this.changeValue(this.to);
     this.changeCanonical({ url });
-    await sleep(800);
+
     const { city, price } = this.city;
     this.changeMeta({
       metaData: {
