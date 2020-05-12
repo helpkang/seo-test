@@ -3,7 +3,7 @@ import { filter, map, mergeMap, takeWhile, delay } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationStart, NavigationEnd } from '@angular/router';
 
 
 function sleep(ms) {
@@ -44,20 +44,21 @@ export class DataComponent implements OnInit, OnDestroy {
   ) { 
 
 
-    this.activeRoute.url.pipe(
-      map(v=>{
-        this.reset();
-        return v;
-      }),
-      delay(500),
-      takeWhile(() => this.alive)
-    )
-    .subscribe(async (url) => {
-      await this.metasubscribe(url);
-    });
+    // this.activeRoute.url.pipe(
+    //   map(v=>{
+    //     this.reset();
+    //     return v;
+    //   }),
+    //   delay(500),
+    //   takeWhile(() => this.alive)
+    // )
+    // .subscribe(async (url) => {
+    //   await this.metasubscribe(url);
+    // });
 
 
     this.router.events.pipe(
+      filter(v=>v instanceof NavigationEnd),
       map(v=>{
         this.reset();
         return v;
@@ -65,6 +66,7 @@ export class DataComponent implements OnInit, OnDestroy {
       delay(500),
       takeWhile(() => this.alive)
     ).subscribe(async (url)=>{
+      console.log('url',url)
       await this.metasubscribe(url);
     })
   }
@@ -79,7 +81,7 @@ export class DataComponent implements OnInit, OnDestroy {
     this.from = value[0];
     this.to = value[2];
     this.changeValue(this.to);
-    this.changeCanonical({ url });
+    this.changeCanonical( url );
 
     const { city, price } = this.city;
     this.changeMeta({
