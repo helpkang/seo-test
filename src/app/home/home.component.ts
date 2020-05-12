@@ -85,7 +85,7 @@ export class HomeComponent implements OnInit {
       this.changeCanonical(data);
       this.changeMeta({metaData:{
         title: '추천 테마 여행지',
-        keywords: '추천 테마 여행지 인천 로마 세부 부다페스트 시드니',
+        keywords: '추천, 테마 여행지, 인천, 로마, 세부, 부다페스트, 시드니',
         description: '즐거운 추천 테마 여행지',
       }});
     });

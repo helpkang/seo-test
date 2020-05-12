@@ -15,6 +15,17 @@ function sleep(ms) {
   templateUrl: './data.component.html',
 })
 export class DataComponent implements OnInit {
+  reset() {
+    this.title.setTitle('');
+    this.meta.updateTag({
+      name: 'keywords',
+      content: ''
+    });
+    this.meta.updateTag({
+      name: 'description',
+      content: ''
+    });
+  }
 
   from = '';
   to = '';
@@ -30,34 +41,32 @@ export class DataComponent implements OnInit {
     private activeRoute: ActivatedRoute,
     @Inject(DOCUMENT) private dom,
   ) { 
-    this.title.setTitle('');
-    this.meta.updateTag({
-      name: 'keywords',
-      content: ''
-    });
-    this.meta.updateTag({
-      name: 'description',
-      content: ''
-    });
+
 
     this.activeRoute.url.subscribe(async (url) => {
-      const { fromto } = this.activeRoute.snapshot.params;
-      const value = fromto.split(/\s*\-\s*/g);
-      this.from = value[0];
-      this.to = value[2];
-      this.changeValue(this.to);
+      await this.metasubscribe(url);
+    });
+    this.router.events.subscribe(async (url)=>{
+      await this.metasubscribe(url);
+    })
+  }
 
-       this.changeCanonical({url});
-
-       await sleep(3000);
-       const {city, price} = this.city;
-       this.changeMeta({
-         metaData:{
-           title: `${this.fromStr} 출발 ${city} 항공권 최저가 ${this.city.price}`,
-           keywords: `${this.fromStr} 출발 ${city} 항공권 최저가`,
-           description: `${this.fromStr} 출발 ${city} 항공권 최저가 ${this.city.price}`,
-         }
-       })
+  private async metasubscribe(url) {
+    this.reset();
+    const { fromto } = this.activeRoute.snapshot.params;
+    const value = fromto.split(/\s*\-\s*/g);
+    this.from = value[0];
+    this.to = value[2];
+    this.changeValue(this.to);
+    this.changeCanonical({ url });
+    await sleep(800);
+    const { city, price } = this.city;
+    this.changeMeta({
+      metaData: {
+        title: `${this.fromStr} 출발 ${city} 항공권 최저가 ${this.city.price}`,
+        keywords: `${this.fromStr}, 출발, ${city}, 항공권, 최저가`,
+        description: `${this.fromStr} 출발 ${city} 항공권 최저가 ${this.city.price}`,
+      }
     });
   }
 
