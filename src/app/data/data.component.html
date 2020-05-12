@@ -1,369 +1,166 @@
+<a class="nav-link active" routerLink="/home">
+    홈
+</a>
 
-
-<header class="head"></header>
-<div class="gnb"></div> 
-
-<div class="dialog"></div>
 
 <div class="container">
     <div class="contents" role="main">
-            <!-- [DMO] 타이틀 수정 -->
-            <h1 id="skip" class="h1">인천 출발 {{city.city}} 항공권</h1>
+        <!-- [DMO] 타이틀 수정 -->
+        <h1 id="skip" class="h1">인천 출발 {{city.city}} 항공권</h1>
 
-            <!-- [DMO] 메뉴를 라디오로 수정 -->
-            <div role="group" aria-labelledby="skip" class="selections -inline">
-                <div class="selection">
-                    <input type="radio" name="airline-ticket" checked="checked" id="col3-1" />
-                    <label for="col3-1">왕복</label>
-                </div>
-                <div class="selection">
-                    <input type="radio" name="airline-ticket" id="col3-2" />
-                    <label for="col3-2">편도</label>
-                </div>
+        <!-- [DMO] 메뉴를 라디오로 수정 -->
+        <div role="group" aria-labelledby="skip" class="selections -inline">
+            <div class="selection">
+                <input type="radio" name="airline-ticket" checked="checked" id="col3-1" />
+                <label for="col3-1">왕복</label>
             </div>
+            <div class="selection">
+                <input type="radio" name="airline-ticket" id="col3-2" />
+                <label for="col3-2">편도</label>
+            </div>
+        </div>
 
-            <div class="bundles -bordered">
-                <div class="bundle -lined">
-                    <div class="price-route -oneway">
-                        <button type="button" id="depature" class="price-route__button -from">
-                            <span class="_hidden">출발지 </span>
-                            <em class="price-route__code">ICN</em>
-                            <span class="price-route__airport">서울/인천</span>
-                        </button>                        
-                        <button type="button" id="arrive" class="price-route__button -to">
-                            <span class="_hidden">도착지 </span>
-                            
-                            <!-- Not Selected -->
-                            <em aria-hidden="true" class="price-route__code">To&nbsp;</em>
-                            
-                            <!-- Selected -->
-                            <!-- <em class="price-route__code">MAD</em>
+        <div class="bundles -bordered">
+            <div class="bundle -lined">
+                <div class="price-route -oneway">
+                    <button type="button" id="depature" class="price-route__button -from">
+                        <span class="_hidden">출발지 </span>
+                        <em class="price-route__code">ICN</em>
+                        <span class="price-route__airport">서울/인천</span>
+                    </button>
+                    <button type="button" id="arrive" class="price-route__button -to">
+                        <span class="_hidden">도착지 </span>
+
+                        <!-- Not Selected -->
+                        <em aria-hidden="true" class="price-route__code">To&nbsp;</em>
+
+                        <!-- Selected -->
+                        <!-- <em class="price-route__code">MAD</em>
                             <span class="price-route__airport">마드리드</span> -->
-                        </button>       
-                    </div>
+                    </button>
                 </div>
-            
-                <div class="bundle -medium -lined">
-                    <div class="fieldset -col2">
-                        <div class="field">
-                            <label for="field1" class="label">여행기간</label>
-                            <div class="forms">
-                                <select id="field1">
-                                    <option value="">7일</option>
-                                </select>
-                            </div>
+            </div>
+
+            <div class="bundle -medium -lined">
+                <div class="fieldset -col2">
+                    <div class="field">
+                        <label for="field1" class="label">여행기간</label>
+                        <div class="forms">
+                            <select id="field1">
+                                <option value="">7일</option>
+                            </select>
                         </div>
-                    
-                        <div class="field">
-                            <label for="field2" class="label">좌석등급</label>
-                            <div class="forms">
-                                <select id="field2">
-                                    <option value="">전체 좌석</option>
-                                    <option value="" selected="selected">일반석</option>
-                                    <option value="">프레스티지석</option>
-                                    <option value="">일등석</option>
-                                </select>
-                            </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="field2" class="label">좌석등급</label>
+                        <div class="forms">
+                            <select id="field2">
+                                <option value="">전체 좌석</option>
+                                <option value="" selected="selected">일반석</option>
+                                <option value="">프레스티지석</option>
+                                <option value="">일등석</option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
-            <p class="caption">오늘부터 6개월내 최저가와 일정을 확인할 수 있습니다.</p>
+        </div>
+        <p class="caption">오늘부터 6개월내 최저가와 일정을 확인할 수 있습니다.</p>
 
-            <div class="confirms -center" (click)="changeUrl()">
-                <button type="button" class="confirm">검색</button>
-            </div>
+        <div class="confirms -center" (click)="changeUrl()">
+            <button type="button" class="confirm">검색</button>
+        </div>
 
-            <!--
+        <!--
                 - 최저가 검색 버튼 클릭 후 하단에 내용이 조회되었음을 사용자에게 알려주기 위해 h2에 tabindex="-1" 삽입하여 포커스 이동시킨다.
                 - 포커스가 나가면 tabindex="-1"은 삭제.
             -->
-            <div class="compare">
-                <h2 class="_hidden">{{city.city}} 도시 가이드</h2>
-                
-                <!-- [수정] PC화면의 검색 결과와 Mobile화면에서의 검색 결과를 compare__mobile과 compare__pc 영역으로 분리 -->
-                <!-- [수정] Mobile 최저가 검색 결과 
+        <div class="compare">
+            <h2 class="_hidden">{{city.city}} 도시 가이드</h2>
+
+            <!-- [수정] PC화면의 검색 결과와 Mobile화면에서의 검색 결과를 compare__mobile과 compare__pc 영역으로 분리 -->
+            <!-- [수정] Mobile 최저가 검색 결과 
                     - 모바일에서 보이는 상세 일정 달력은 그래프 내부에 마크업이 위치함. (기존과 동일)
                     - PC에서 보이는 상세 일정 달력은 그래프 외부 하단에 마크업이 위치함. (기존 마크업에서 외부로 이동)
                 -->
-                <div class="compare__mobile">
-                    <div class="compare__graph">
-                        <div class="compare__info">
-                            <strong class="compare__city">{{to}} {{city.city}}</strong>
+            <div class="compare__mobile">
+                <div class="compare__graph">
+                    <div class="compare__info">
+                        <strong class="compare__city">{{to}} {{city.city}}</strong>
+                    </div>
+
+                    <div class="compare__chart">
+                        <div class="compare__legends" aria-hidden="true">
+                            <div class="compare__legend -low">최저가</div>
                         </div>
-                        
-                        <div class="compare__chart"> 
-                            <div class="compare__legends" aria-hidden="true">
-                                <div class="compare__legend -low">최저가</div>
-                            </div>
-                            <ul class="compare__list">
-                                <li class="compare__item -lowest" data-percentage="57.91">
-                                    <div class="compare__aligner">
-                                        <div class="compare__value">
-                                            <div class="compare__data">
-                                                <span class="compare__date" aria-hidden="true">2020.02</span>
-                                                <span class="_hidden">2020년 2월</span>
-                                                <span class="compare__price"><span class="compare__tag">현재 최저가&nbsp;</span>892,200원</span>
-                                                <!-- [수정] 숨김 텍스트 문구 수정 - 이하 동일 -->
-                                                <span class="_hidden">&nbsp;현재 최고가 대비 42.06% 저렴&nbsp;</span>
-                                            </div>
+                        <ul class="compare__list">
+                            <li class="compare__item -lowest" data-percentage="57.91">
+                                <div class="compare__aligner">
+                                    <div class="compare__value">
+                                        <div class="compare__data">
+                                            <span class="compare__date" aria-hidden="true">2020.02</span>
+                                            <span class="_hidden">2020년 2월</span>
+                                            <span class="compare__price"><span class="compare__tag">현재
+                                                    최저가&nbsp;</span>{{city.price}}</span>
+                                            <!-- [수정] 숨김 텍스트 문구 수정 - 이하 동일 -->
+                                            <span class="_hidden">&nbsp;현재 최고가 대비 42.06% 저렴&nbsp;</span>
                                         </div>
                                     </div>
-                                    <!-- [수정] 
+                                </div>
+                                <!-- [수정] 
                                         - 버튼 문구 수정 - 이하 동일 
                                         - Mobile에서 aria-expanded="false" 추가 - 이하 동일 
                                         - 버튼 위치 이동 - 이하 동일
                                     -->
-                                    <button type="button" class="compare__datepicker" aria-expanded="false">최저가 892,200원 2020년 2월 달력 보기</button>
-                                </li>
-                                <li class="compare__item -lowest" data-percentage="57.91">
-                                    <div class="compare__aligner">
-                                        <div class="compare__value">
-                                            <div class="compare__data">
-                                                <span class="compare__date" aria-hidden="true">2020.03</span>
-                                                <span class="_hidden">2020년 3월</span>
-                                                <span class="compare__price"><span class="compare__tag">현재 최저가&nbsp;</span>892,200원</span>
-                                                <span class="_hidden">&nbsp;현재 최고가 대비 42.06% 저렴&nbsp;</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- [수정] Mobile에서 aria-expanded="true", aria-controls="compare-detail" 추가. 최저가 텍스트 추가 -->
-                                    <button type="button" class="compare__datepicker" aria-expanded="false">최저가 892,200원 2020년 3월 달력 보기</button>
-                                    <!-- 
-                                        - 일정 달력 노출 시 compare-dates의 h3에 tabindex="-1" 삽입하여 포커스 이동시킨다.
-                                        - 포커스가 나가면 tabindex="-1"은 삭제.
-                                    -->
-                                    <!-- 3월 상세 달력 위치 -->
-                                </li>
-                                <li class="compare__item" data-percentage="83.7">
-                                    <div class="compare__aligner">
-                                        <div class="compare__value">
-                                            <div class="compare__data">
-                                                <span class="compare__date" aria-hidden="true">2020.04</span>
-                                                <span class="_hidden">2020년 4월&nbsp;</span>
-                                                <span class="compare__price">1,289,500원</span>
-                                                <span class="_hidden">&nbsp;현재 최고가 대비 16.3% 저렴&nbsp;</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="compare__datepicker" aria-expanded="false">1,289,500원 2020년 4월 달력 보기</button>
-                                </li>
-                                <li class="compare__item -highest" data-percentage="100">
-                                    <div class="compare__aligner">
-                                        <div class="compare__value">
-                                            <div class="compare__data">
-                                                <span class="compare__date" aria-hidden="true">2020.05</span>
-                                                <span class="_hidden">2020년 5월&nbsp;</span>
-                                                <span class="compare__price">1,540,500원</span>
-                                                <span class="_hidden">&nbsp;현재 최고가&nbsp;</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="compare__datepicker" aria-expanded="false">1,540,500원 2020년 5월 달력 보기</button>
-                                </li>
-                                <li class="compare__item" data-percentage="75.66">
-                                    <div class="compare__aligner">
-                                        <div class="compare__value">
-                                            <div class="compare__data">
-                                                <span class="compare__date" aria-hidden="true">2020.06</span>
-                                                <span class="_hidden">2020년 6월&nbsp;</span>
-                                                <span class="compare__price">1,165,500원</span>
-                                                <span class="_hidden">&nbsp;현재 최고가 대비 24.34% 저렴&nbsp;</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="compare__datepicker" aria-expanded="false">1,165,500원 2020년 6월 달력 보기</button>
-                                </li>
-                                <li class="compare__item" data-percentage="63.7">
-                                    <div class="compare__aligner">
-                                        <div class="compare__value">
-                                            <div class="compare__data">
-                                                <span class="compare__date" aria-hidden="true">2020.07</span>
-                                                <span class="_hidden">2020년 7월</span>
-                                                <span class="compare__price">981,400원</span>
-                                                <span class="_hidden">&nbsp;현재 최고가 대비 36.3% 저렴&nbsp;</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="compare__datepicker" aria-expanded="false">981,400원 2020년 7월 달력 보기</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- [수정] PC 최저가 검색 결과 
-                    - 모바일에서 보이는 상세 일정 달력은 그래프 내부에 마크업이 위치함. (기존과 동일)
-                    - PC에서 보이는 상세 일정 달력은 그래프 외부 하단에 마크업이 위치함. (기존 마크업에서 외부로 이동)
-                -->
-                <div class="compare__pc">
-                    <div class="compare__graph">
-                        <div class="compare__info">
-                            <strong class="compare__city">{{to}} {{city.city}}</strong>
-                        </div>
-                        
-                        <!-- [수정] PC 영역에 -vertical 클래스 추가 -->
-                        <div class="compare__chart -vertical"> 
-                            <div class="compare__legends" aria-hidden="true">
-                                <div class="compare__legend -low">최저가</div>
-                            </div>
-                            <!-- [수정] PC 영역에 role="tablist", aria-orientation="horizontal" 추가 -->
-                            <ul role="tablist" class="compare__list" aria-orientation="horizontal">
-                                <li role="presentation" class="compare__item -lowest" data-percentage="57.91">
-                                    <div class="compare__aligner">
-                                        <div class="compare__value">
-                                            <div class="compare__data">
-                                                <span class="compare__date" aria-hidden="true">2020.02</span>
-                                                <span class="_hidden">2020년 2월</span>
-                                                <span class="compare__price"><span class="compare__tag">현재 최저가&nbsp;</span>892,200원</span>
-                                                <!-- [수정] 숨김 텍스트 문구 수정 - 이하 동일 -->
-                                                <span class="_hidden">&nbsp;현재 최고가 대비 42.06% 저렴&nbsp;</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- [수정] 버튼 문구 수정. PC 영역에 role="tab", aria-selected 추가. 마크업 위치 이동 - 이하 동일 -->
-                                    <button type="button" role="tab" id="date-tab-pc2" class="compare__datepicker" aria-selected="false" aria-controls="compare-detail-pc2">최저가 981,400원 2020년 2월 달력 보기</button>
-                                </li>
-                                <li role="presentation" class="compare__item -lowest" data-percentage="57.91">
-                                    <div class="compare__aligner">
-                                        <div class="compare__value">
-                                            <div class="compare__data">
-                                                <span class="compare__date" aria-hidden="true">2020.03</span>
-                                                <span class="_hidden">2020년 3월</span>
-                                                <span class="compare__price"><span class="compare__tag">현재 최저가&nbsp;</span>892,200원</span>
-                                                <span class="_hidden">&nbsp;현재 최고가 대비 42.06% 저렴&nbsp;</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- [수정] PC 영역에 role="tab", id, aria-selected="true", aria-controls="date-detail-pc3" 추가. 마크업 위치 이동 -->
-                                    <button type="button" role="tab" id="date-tab-pc3" class="compare__datepicker" aria-selected="false" aria-controls="compare-detail-pc3">최저가 892,200원 2020년 3월 달력 보기</button>
-                                </li>
-                                <li role="presentation" class="compare__item" data-percentage="83.7">
-                                    <div class="compare__aligner">
-                                        <div class="compare__value">
-                                            <div class="compare__data">
-                                                <span class="compare__date" aria-hidden="true">2020.04</span>
-                                                <span class="_hidden">2020년 4월&nbsp;</span>
-                                                <span class="compare__price">1,289,500원</span>
-                                                <span class="_hidden">&nbsp;현재 최고가 대비 16.3% 저렴&nbsp;</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" role="tab" id="date-tab-pc4" class="compare__datepicker" aria-selected="false" aria-controls="compare-detail-pc4">1,289,500원 2020년 4월 달력 보기</button>
-                                </li>
-                                <li role="presentation" class="compare__item -highest" data-percentage="100">
-                                    <div class="compare__aligner">
-                                        <div class="compare__value">
-                                            <div class="compare__data">
-                                                <span class="compare__date" aria-hidden="true">2020.05</span>
-                                                <span class="_hidden">2020년 5월&nbsp;</span>
-                                                <span class="compare__price">1,540,500원</span>
-                                                <span class="_hidden">&nbsp;현재 최고가&nbsp;</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- [수정] 버튼 문구 수정 -->
-                                    <button type="button" role="tab" id="date-tab-pc5" class="compare__datepicker" aria-selected="false" aria-controls="compare-detail-pc5">최고가 1,540,500원 2020년 5월 달력 보기</button>
-                                </li>
-                                <li role="presentation" class="compare__item" data-percentage="75.66">
-                                    <div class="compare__aligner">
-                                        <div class="compare__value">
-                                            <div class="compare__data">
-                                                <span class="compare__date" aria-hidden="true">2020.06</span>
-                                                <span class="_hidden">2020년 6월&nbsp;</span>
-                                                <span class="compare__price">1,165,500원</span>
-                                                <span class="_hidden">&nbsp;현재 최고가 대비 24.34% 저렴&nbsp;</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" role="tab" id="date-tab-pc6" class="compare__datepicker" aria-controls="compare-detail-pc6">1,165,500원 2020년 6월 달력 보기</button>
-                                </li>
-                                <li role="presentation" class="compare__item" data-percentage="63.7">
-                                    <div class="compare__aligner">
-                                        <div class="compare__value">
-                                            <div class="compare__data">
-                                                <span class="compare__date" aria-hidden="true">2020.07</span>
-                                                <span class="_hidden">2020년 7월</span>
-                                                <span class="compare__price">981,400원</span>
-                                                <span class="_hidden">&nbsp;현재 최고가 대비 36.3% 저렴&nbsp;</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" role="tab" id="date-tab-pc7" class="compare__datepicker" aria-controls="compare-detail-pc7">981,400원 2020년 7월 달력 보기</button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- [수정] PC 영역에 role="tabpanel", aria-labelledby="date-tab-pc", id="date-detail-pc", tabindex="0" 추가 -->
-                    <div role="tabpanel" aria-labelledby="date-tab-pc2" id="compare-detail-pc2" class="compare__item-detail" aria-hidden="true" tabindex="-1">
-                        <!-- 2월 달력 상세 영역 -->
-                    </div>
-                    <div role="tabpanel" aria-labelledby="date-tab-pc3" id="compare-detail-pc3" class="compare__item-detail" aria-hidden="true" tabindex="-1">
-                        <!-- 3월 달력 상세 -->
-                    </div>
-                    <div role="tabpanel" aria-labelledby="date-tab-pc4" id="compare-detail-pc4" class="compare__item-detail" aria-hidden="true" tabindex="-1">
-                        <!-- 4월 달력 상세 영역 -->
-                    </div>
-                    <div role="tabpanel" aria-labelledby="date-tab-pc5" id="compare-detail-pc5" class="compare__item-detail" aria-hidden="true" tabindex="-1">
-                        <!-- 5월 달력 상세 영역 -->
-                    </div>
-                    <div role="tabpanel" aria-labelledby="date-tab-pc6" id="compare-detail-pc6" class="compare__item-detail" aria-hidden="true" tabindex="-1">
-                        <!-- 6월 달력 상세 영역 -->
-                    </div>
-                    <div role="tabpanel" aria-labelledby="date-tab-pc7" id="compare-detail-pc7" class="compare__item-detail" aria-hidden="true" tabindex="-1">
-                        <!-- 7월 달력 상세 영역 -->
-                    </div>
-                </div>
-                <!-- // PC 상세 달력 -->
-            </div>
-
-            <div class="city-brief">
-                <div class="city-brief__view">
-                    <img alt="" src="/assets/images/temp/city-brief__image-pc.png" class="city-brief__image _mo-hidden"/>
-                    <img alt="" src="/assets/images/temp/city-brief__image-m.png" class="city-brief__image _pc-hidden"/>
-                </div>
-                <div class="city-brief__info">
-                    <div class="city-brief__info-inner">
-                        <div class="city-brief__loca">
-                            <strong class="city-brief__name">{{city.city}}</strong>
-                            <span class="city-brief__contry">{{to}}</span>
-                        </div>
-                        <div class="city-brief__item">
-                            <div class="city-brief__weather">
-                                <span class="city-brief__title">현지 날씨</span>
-                                <span class="city-brief__desc">11℃ ~ 20℃</span>
-                            </div>
-                            <div class="city-brief__time">
-                                <span class="city-brief__title">현지 시간</span>
-                                <span class="city-brief__desc">2020/02/18 06:23(오후)</span>
-                            </div>
-                        </div>
+                                <button type="button" class="compare__datepicker" aria-expanded="false">최저가 {{city.price}}
+                                    2020년 2월 달력 보기</button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <h3 class="h3">{{city.title}}</h3>
-            <p class="p">{{city.desc}}</p>
+ 
+        </div>
 
-            
-
-            <!-- [DMO] 유의사항 추가 -->
-            <div class="notice -extend">
-                <h2 class="notice__heading">
-                    <button type="button" aria-controls="expand01" aria-expanded="false" class="notice__expander">유의사항</button>
-                </h2>
-                <div id="expand01" class="notice__expand" aria-hidden="true">
-                    <ul class="list -disc">
-                        <li class="list__item">유류할증료와 세금이 포함된 성인 1인 기준 예상 금액입니다.</li>
-                        <li class="list__item">상기 금액은 참고용으로 정확하지 않으며 구매 가능한 운임은 예약 진행 시 항공편 선택 단계에서 확인 가능합니다.</li>
-                        <li class="list__item">일부 지역 출발 운임은 유류할증료 대신 항공사 부과 요금을 포함하고 있습니다.</li>
-                    </ul>
+        <div class="city-brief">
+            <div class="city-brief__view">
+                <img alt="" src="/assets/images/temp/city-brief__image-pc.png" class="city-brief__image _mo-hidden" />
+                <img alt="" src="/assets/images/temp/city-brief__image-m.png" class="city-brief__image _pc-hidden" />
+            </div>
+            <div class="city-brief__info">
+                <div class="city-brief__info-inner">
+                    <div class="city-brief__loca">
+                        <strong class="city-brief__name">{{city.city}}</strong>
+                        <span class="city-brief__contry">{{city.country}}</span>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <h3 class="h3">{{city.title}}</h3>
+        <p class="p">{{city.desc}}</p>
+
+
+
+        <!-- [DMO] 유의사항 추가 -->
+        <div class="notice -extend">
+            <h2 class="notice__heading">
+                <button type="button" aria-controls="expand01" aria-expanded="false"
+                    class="notice__expander">유의사항</button>
+            </h2>
+            <div id="expand01" class="notice__expand" aria-hidden="true">
+                <ul class="list -disc">
+                    <li class="list__item">유류할증료와 세금이 포함된 성인 1인 기준 예상 금액입니다.</li>
+                    <li class="list__item">상기 금액은 참고용으로 정확하지 않으며 구매 가능한 운임은 예약 진행 시 항공편 선택 단계에서 확인 가능합니다.</li>
+                    <li class="list__item">일부 지역 출발 운임은 유류할증료 대신 항공사 부과 요금을 포함하고 있습니다.</li>
+                </ul>
+            </div>
+        </div>
     </div>
+</div>
 
-    <footer class="footer"></footer>
+<footer class="footer"></footer>
 
-    <div class="loading"></div>
+<div class="loading"></div>

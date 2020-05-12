@@ -8,10 +8,10 @@ import { DataRoutingModule } from './data-routing.module';
 @NgModule({
   declarations: [DataComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    DataRoutingModule
   ],
   exports: [
-    DataRoutingModule
   ]
 })
 export class DataModule { }
