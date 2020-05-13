@@ -44,18 +44,6 @@ export class DataComponent implements OnInit, OnDestroy {
   ) { 
 
 
-    // this.activeRoute.url.pipe(
-    //   map(v=>{
-    //     this.reset();
-    //     return v;
-    //   }),
-    //   delay(500),
-    //   takeWhile(() => this.alive)
-    // )
-    // .subscribe(async (url) => {
-    //   await this.metasubscribe(url);
-    // });
-
 
     this.router.events.pipe(
       filter(v=>v instanceof NavigationEnd),
@@ -65,9 +53,9 @@ export class DataComponent implements OnInit, OnDestroy {
       }),
       delay(500),
       takeWhile(() => this.alive)
-    ).subscribe(async (url)=>{
+    ).subscribe(async (url:NavigationEnd)=>{
       console.log('url',url)
-      await this.metasubscribe(url);
+      await this.metasubscribe({...url, url:url.urlAfterRedirects});
     })
   }
   ngOnDestroy(): void {

@@ -3,7 +3,7 @@ import { filter, map, mergeMap, takeWhile, delay } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Title, Meta } from '@angular/platform-browser';
-import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
+import { Router, NavigationStart, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -16,14 +16,7 @@ function sleep(ms) {
 export class HomeComponent implements OnInit, OnDestroy {
   alive = true;
 
-  constructor(
-    private http: HttpClient,
-    private router: Router,
-    private title: Title,
-    private meta: Meta,
-    private activeRoute: ActivatedRoute,
-    @Inject(DOCUMENT) private dom,
-  ) {
+  reset() {
     this.title.setTitle('');
     this.meta.updateTag({
       name: 'keywords',
@@ -33,6 +26,17 @@ export class HomeComponent implements OnInit, OnDestroy {
       name: 'description',
       content: ''
     });
+  }
+
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private title: Title,
+    private meta: Meta,
+    private activeRoute: ActivatedRoute,
+    @Inject(DOCUMENT) private dom,
+  ) {
+
     this.setupSEO();
   }
 
@@ -75,23 +79,45 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
-  private setupSEO() {
-    const routerAjaxSrc = this.activeRoute.url
+  // private setupSEO() {
+  //   const routerAjaxSrc = this.activeRoute.url
 
-    routerAjaxSrc.pipe(
-      map(url=>{
-        this.changeCanonical({url});
-        return url;
+  //   routerAjaxSrc.pipe(
+  //     map(url=>{
+  //       this.changeCanonical({url});
+  //       return url;
+  //     }),
+  //     delay(500),
+  //     takeWhile(() => this.alive),
+  //     map((url) => ({
+  //       url,
+  //       metaData: {
+  //         title: url,
+  //       }
+  //     }))
+  //   ).subscribe((data) => {
+  //     this.changeMeta({
+  //       metaData: {
+  //         title: '추천 테마 여행지',
+  //         keywords: '추천, 테마 여행지, 인천, 로마, 세부, 부다페스트, 시드니',
+  //         description: '즐거운 추천 테마 여행지',
+  //       }
+  //     });
+  //   });
+  // }
+
+  setupSEO(){
+    this.router.events.pipe(
+      filter(v=>v instanceof NavigationEnd),
+      map((v:NavigationEnd)=>{
+        console.log(v)
+        this.reset();
+        this.changeCanonical({url:v.urlAfterRedirects});
+        return v;
       }),
-      delay(500),
-      takeWhile(() => this.alive),
-      map((url) => ({
-        url,
-        metaData: {
-          title: url,
-        }
-      }))
-    ).subscribe((data) => {
+      // delay(500),
+      takeWhile(() => this.alive)
+    ).subscribe(async (url)=>{
       this.changeMeta({
         metaData: {
           title: '추천 테마 여행지',
@@ -99,6 +125,6 @@ export class HomeComponent implements OnInit, OnDestroy {
           description: '즐거운 추천 테마 여행지',
         }
       });
-    });
+    })
   }
 }
