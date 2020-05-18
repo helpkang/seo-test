@@ -41,12 +41,40 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    // document.addEventListener('click', this.parentClick, {capture:true})
   }
 
+  parentClick(event) {
+    var target = event.target
+    
+    console.log(JSON.stringify(target))
+    var idAttr = target.id;
+    console.log(idAttr)
+    
+    if(idAttr !== "a") return true;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    event.stopPropagation();
+   
+
+  }
+  
   ngOnDestroy(): void {
     this.alive = false;
   }
 
+  down($event: Event) {
+    console.log($event)
+  }
+
+  click(event) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    event.stopPropagation();
+    console.log('click')
+    return false;
+  }
   changeCanonical({ url }) {
     let link: HTMLLinkElement = [].slice.call(this.dom.getElementsByTagName('link')).find((link) => link.getAttribute('rel') === 'canonical');
 
@@ -106,18 +134,18 @@ export class HomeComponent implements OnInit, OnDestroy {
   //   });
   // }
 
-  setupSEO(){
+  setupSEO() {
     this.router.events.pipe(
-      filter(v=>v instanceof NavigationEnd),
-      map((v:NavigationEnd)=>{
+      filter(v => v instanceof NavigationEnd),
+      map((v: NavigationEnd) => {
         console.log(v)
         this.reset();
-        this.changeCanonical({url:v.urlAfterRedirects});
+        this.changeCanonical({ url: v.urlAfterRedirects });
         return v;
       }),
       // delay(500),
       takeWhile(() => this.alive)
-    ).subscribe(async (url)=>{
+    ).subscribe(async (url) => {
       this.changeMeta({
         metaData: {
           title: '추천 테마 여행지',

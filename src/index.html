@@ -8,9 +8,23 @@
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap" rel="stylesheet" />
   <link href="/common.css" rel="stylesheet">
   <link href="/components.css" rel="stylesheet">
-  
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    document.addEventListener('click', function (event) {
+    var target = event.target
+    var idAttr = target.id;
+    if(idAttr !== "a") return true;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    event.stopPropagation();
+   
+
+  }, {capture:true})
+
+
+  </script>
 </body>
 </html>
